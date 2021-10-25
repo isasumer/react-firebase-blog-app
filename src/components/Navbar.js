@@ -96,7 +96,7 @@ export default function Navbar() {
           <div className={classes.root}>
             <Link to="/" className={classes.login}>
               <Typography variant="h6" className={classes.title}>
-                ──── <span>{"<Clarusway IT />"}</span> BLOG ────
+                ──── <span>{"<Summer />"}</span> BLOG ────
               </Typography>
             </Link>
           </div>
