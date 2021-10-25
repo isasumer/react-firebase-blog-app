@@ -4,10 +4,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import cw from "../assets/cw.jpeg";
+import { useAuth } from "../context/AuthContextProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +19,21 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    display: "none",
+    fontFamily: "Girassol",
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
+    },
+    "& span": {
+      fontSize: 30,
+      color: "wheat",
+    },
+  },
+  appBar: {
+    backgroundColor: "#046582",
+  },
+  logo: {
+    width: 40,
   },
 }));
 
@@ -25,6 +41,8 @@ export default function Navbar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const { currentUser } = useAuth();
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -34,7 +52,7 @@ export default function Navbar() {
   };
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -42,10 +60,10 @@ export default function Navbar() {
             color="inherit"
             aria-label="menu"
           >
-            <MenuIcon />
+            <img src={cw} alt="logo" className={classes.logo}></img>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Photos
+            ──── <span>{"< Summer />"}</span> BLOG ────
           </Typography>
           <div>
             <IconButton
@@ -55,7 +73,7 @@ export default function Navbar() {
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle style={{ fontSize: 40 }} />
             </IconButton>
             <Menu
               id="menu-appbar"
