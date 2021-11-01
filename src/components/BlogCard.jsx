@@ -79,7 +79,6 @@ const BlogCard = ({ item }) => {
           image={image || placeholder}
           title={title}
         />
-
         <CardContent className={classes.cardContent}>
           <Typography
             gutterBottom
