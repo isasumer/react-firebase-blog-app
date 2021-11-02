@@ -19,7 +19,7 @@ const AppRouter = () => {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/" exact component={Dashboard} />
-        {/*If currentLogin==true PrivateRouter works*/}
+
         <PrivateRouter path="/profile" component={Profile} />
         <PrivateRouter path="/new-blog" component={NewBlog} />
         <PrivateRouter path="/update-blog/:id" component={UpdateBlog} />

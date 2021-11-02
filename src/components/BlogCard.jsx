@@ -67,7 +67,7 @@ const BlogCard = ({ item }) => {
     if (!currentUser) {
       toastErrorNotify("Please Login to get the details");
     }
-    // if user doesn't exist it is routed to the login page via PrivateRouter
+    // if user doenst exist it is routed to the login page via PrivateRouter
     history.push(`/detail/${id}`);
   };
 
@@ -79,6 +79,7 @@ const BlogCard = ({ item }) => {
           image={image || placeholder}
           title={title}
         />
+
         <CardContent className={classes.cardContent}>
           <Typography
             gutterBottom

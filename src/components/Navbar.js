@@ -96,10 +96,11 @@ export default function Navbar() {
           <div className={classes.root}>
             <Link to="/" className={classes.login}>
               <Typography variant="h6" className={classes.title}>
-                ──── <span>{"<Summer />"}</span> BLOG ────
+                ──── <span>{"<Clarusway IT />"}</span> BLOG ────
               </Typography>
             </Link>
           </div>
+
           <div>
             <IconButton
               aria-label="account of current user"
