@@ -93,7 +93,7 @@ const ValidationSchema = yup.object().shape({
 });
 
 const LoginAndRegisterForm = (props) => {
-  console.log(props);
+  console.log(props.values);
   const { loginWithGoogle } = useAuth();
 
   const handleGoogleProvider = () => {
